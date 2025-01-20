@@ -3,13 +3,14 @@
 
 1. Created a spring boot application with a single endpoint GET /api/answer as per the requirement.
 2. Added the handler code for handling arithmetic expressions and basic questions which can be extended in the future if we want to have a specific type of handling without changing the existing code.
-   1. Refer to classes ArithenmicQuestionHandler.java and MatchingQuestionHandler.java
+   1. Refer to classes ArithenmicQuestionHandler.java (BODMAS rule in evaluation) and MatchingQuestionHandler.java
 3. Loaded Predefined Questions from a json file from the resources folder.
 4. To compare the question with matching sentence from predefined questions, explored the following libraries.
    1. python spacy library.
    2. edu.stanford.nlp java library with cosine similarity.
    3. There are couple of challenges to determine the similarity score to determine the exact match, for the scope of this task we have gone with .85 value. 
-   4. But, we can explore more the similarity matching score 
+   4. But, we can explore more the similarity matching score
+5. Inscope of this task, used basic stack based expression evaluation. We can also use existing expression evaluator libraries to support complex math operations like power function. (^ operator)
 
 ### Extensibility:
 1. Currently, i have added json file from resources. We can externalise the json file to a repository in github and introduce a spring cloud config server to point to github resource.
@@ -27,7 +28,8 @@
 2. Added exception handling.
 3. Used Gradle as build tool.
 
-
+### CI/CD Pipeline
+1. We can user Jenkins to build and deploy the application.
 
 ## Deployment Strategy
 1. We can use AWS Kubernates cluster to deploy the application.
